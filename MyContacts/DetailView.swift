@@ -35,41 +35,23 @@ struct DetailView: View {
                     .fontWeight(.medium)
                 
                  HStack(alignment:.center) {
-                    Button("Message", action: {
-                        print("Message tapped.")
-                    })
-                    
-////                    Group {
-//                        Button(action: {
-//                            print("Message")
-//                        }, label: {
-//                            VStack(spacing:10) {
-//                            Image(systemName: "message.fill")
-//                            Text("message")
-//                                .padding(.horizontal,3).lineLimit(1).minimumScaleFactor(0.4)
-//                                .frame(minWidth: 0,
-//                                       maxWidth: .infinity,
-//                                       minHeight: 0,
-//                                       maxHeight: 0)
-//                        }
-//                        })
-//                        .padding()
-//                        .foregroundColor(.blue)
-//                        .background(Color(UIColor.white))
-//                        .cornerRadius(10)
-////                        .buttonStyle(SampleStyle(imageName: "message.fill", title: "message"))
-//                        Button(action: {
-//                                print("Call")
-//                        }, label: { })
-////                        .buttonStyle(SampleStyle(imageName: "phone.fill", title: "call"))
-//                        Button(action: {print("Video")}, label: {})
-////                        .buttonStyle(SampleStyle(imageName: "video.fill", title: "Video"))
-//                        Button(action: { print("mail")}, label: {})
-////                            .buttonStyle(SampleStyle(imageName: "mail.fill", title: "mail"))
-//                            .buttonStyle(BorderlessButtonStyle())
-////                    }
+                    Group {
+                        Button(action: {
+                            print("Message")
+                        }, label: {  })
+                        .buttonStyle(SampleStyle(imageName: "message.fill", title: "message"))
+                        Button(action: {
+                                print("Call")
+                        }, label: { })
+                        .buttonStyle(SampleStyle(imageName: "phone.fill", title: "call"))
+                        Button(action: {print("Video")}, label: {})
+                        .buttonStyle(SampleStyle(imageName: "video.fill", title: "Video"))
+                        Button(action: { print("mail")}, label: {})
+                            .buttonStyle(SampleStyle(imageName: "mail.fill", title: "mail"))
+                            .buttonStyle(BorderlessButtonStyle())
+                    }
                 }
-//                .padding([.leading, .trailing],10)
+                .padding([.leading, .trailing],10)
                 //Form is to grouping the data
                 Form() {
                    
@@ -142,28 +124,28 @@ struct DetailView: View {
 
 }
 
-//struct SampleStyle: ButtonStyle {
-//    var imageName: String
-//    var title: String
-//
-//    func makeBody(configuration: Self.Configuration) -> some View {
-//        configuration.label
-//        VStack(spacing:10) {
-//            Image(systemName: imageName)
-//            Text(title)
-//                .padding(.horizontal,3).lineLimit(1).minimumScaleFactor(0.4)
-//                .frame(minWidth: 0,
-//                       maxWidth: .infinity,
-//                       minHeight: 0,
-//                       maxHeight: 0)
-//        }
-//        .padding()
-//        .foregroundColor(.blue)
-//        .background(Color(UIColor.white))
-//        .cornerRadius(10)
-//
-//    }
-//}
+struct SampleStyle: ButtonStyle {
+    var imageName: String
+    var title: String
+
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+        VStack(spacing:10) {
+            Image(systemName: imageName)
+            Text(title)
+                .padding(.horizontal,3).lineLimit(1).minimumScaleFactor(0.4)
+                .frame(minWidth: 0,
+                       maxWidth: .infinity,
+                       minHeight: 0,
+                       maxHeight: 0)
+        }
+        .padding()
+        .foregroundColor(.blue)
+        .background(Color(UIColor.white))
+        .cornerRadius(10)
+
+    }
+}
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
